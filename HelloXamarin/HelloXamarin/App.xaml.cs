@@ -13,7 +13,7 @@ namespace HelloXamarin
     {
       InitializeComponent();
 
-      MainPage = new HelloXamarin.MainPage();
+      MainPage = new NavigationPage(new HelloXamarin.MainPage());
     }
 
     protected override void OnStart()
