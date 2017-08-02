@@ -5,9 +5,20 @@
              x:Class="HelloXamarin.MainPage">
 
   <ContentPage.Content>
-    <StackLayout>
-      <Label Text="Hello World!" FontSize="Medium"></Label>
-      <Button Text="Goto Page 2" Clicked="Button_Clicked"></Button>
+    <StackLayout Padding="20">
+      <Slider x:Name="MySlider" Minimum="0"
+              Maximum="100" VerticalOptions="CenterAndExpand">
+        
+      </Slider>
+      <Label FontAttributes="Bold" TextColor="Yellow"
+             BackgroundColor="Black" FontSize="40"
+             HorizontalOptions="Center"
+             BindingContext="{x:Reference MySlider}"
+             Text="{Binding Value}">
+        
+      </Label>
+      <Label Text="{Binding LabelText}" BackgroundColor="Blue" TextColor="White"></Label>
+      <Button Text="click me!" BackgroundColor="Blue" TextColor="Yellow" Command="{Binding ChangeTextCommand}"></Button>
     </StackLayout>
   </ContentPage.Content>
 
